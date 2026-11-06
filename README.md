@@ -1,5 +1,7 @@
 # dsh-app-row-brand
 
+[English](README.md) | [中文](README.zh.md)
+
 Puts your own image and text inside the **window title bar** of the DeepSeek
 Harness desktop shell — the 40px row that holds the sidebar toggle, the native
 应用 / 编辑 menus and the minimize / maximize / close buttons. A **Title bar**
