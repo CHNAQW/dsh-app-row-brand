@@ -1,0 +1,5 @@
+# dsh-app-row-brand as a profile layer: one row holding this package. The
+# browser half draws the title-bar strip and adds a page to Settings.
+- insert:
+    - id: dsh-app-row-brand
+      name: 'dsh-app-row-brand'
