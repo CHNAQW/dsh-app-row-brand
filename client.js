@@ -38,6 +38,7 @@ window.__ModuleLoader__.load({
     const SHIMMER_MIN = 600;
     const SHIMMER_MAX = 20000;
     const DEFAULT_TEXT = 'DeepSeek Harness';
+    const DEFAULT_HINT_TEXT = '请到设置界面设置语句';
     const DEFAULT_COLOR = '#4d6bfe';
     const DEFAULT_ALIGN = 'center';
     const MAX_IMAGE_CHARS = 900 * 1024;
@@ -345,6 +346,15 @@ window.__ModuleLoader__.load({
       };
     }
 
+    /** Out-of-the-box content: the setup hint and the product name, 30s each with a left-to-right shimmer. */
+    function defaultItems() {
+      const shared = { shimmer: true, shimmerDirection: 'ltr', durationMs: 30000 };
+      return [
+        normalizeItem(Object.assign({ text: DEFAULT_HINT_TEXT }, shared)),
+        normalizeItem(Object.assign({ text: DEFAULT_TEXT }, shared)),
+      ];
+    }
+
     function normalizeItem(raw) {
       const source = raw && typeof raw === 'object' ? raw : {};
       const text = typeof source.text === 'string' ? source.text.slice(0, TEXT_MAX) : DEFAULT_TEXT;
@@ -408,11 +418,11 @@ window.__ModuleLoader__.load({
       ) {
         items = [normalizeItem(source)];
       } else {
-        items = [normalizeItem(null)];
+        items = defaultItems();
       }
       const pinnedIndex =
         Number.isInteger(source.pinnedIndex) && source.pinnedIndex >= 0 ? source.pinnedIndex : null;
-      return { items: items.length > 0 ? items : [normalizeItem(null)], pinnedIndex };
+      return { items: items.length > 0 ? items : defaultItems(), pinnedIndex };
     }
 
     function readConfig() {

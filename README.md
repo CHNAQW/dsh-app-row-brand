@@ -15,6 +15,9 @@ page in Settings edits the content.
   sidebar's own brand row stays as shipped.
 - Holds a list of up to 12 items. With more than one item the strip rotates:
   every item has its own display time in seconds (stored as `durationMs`).
+- Out of the box the strip alternates every 30 seconds between “请到设置界面设置语句”
+  and “DeepSeek Harness”, both with a left-to-right shimmer and the interface
+  font; **Restore defaults** in Settings brings this back.
 - Each item carries text, text color, font family, font size, bold, underline,
   image, image width, alignment, and an optional shimmer.
 - Fonts are read from the machine: the Local Font Access API when the shell

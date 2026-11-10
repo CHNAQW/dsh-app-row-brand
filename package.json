@@ -1,6 +1,6 @@
 {
   "name": "dsh-app-row-brand",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "Custom text and image in the desktop window title bar, with rotation, fonts, shimmer and a Settings page.",
   "license": "MIT",
